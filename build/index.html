@@ -7,7 +7,7 @@
     <link id="styles-link" rel="stylesheet" href="https://tableau-mkt.github.io/components/build/css/style.min.css" media="all" />
     <!-- A few custom styles for layout -->
     <style>
-      .sidenav {
+      .html-boilerplate-sidenav {
         position: fixed;
         box-sizing: border-box;
         top: 0;
@@ -16,26 +16,41 @@
         overflow: auto;
         padding: 0 1em;
         border-right: 1px solid #ddd;
+        background: #fff;
       }
-      .main-content {
+      .html-boilerplate-main-content {
         margin-left: 20%;
         padding: 0 2em 0 4em;
         max-width: 1200px;
         box-sizing: border-box;
       }
-      .section-wrapper {
+      .html-boilerplate-section-wrapper {
         margin-top: 2em;
         border-top: 1px solid #ddd;
       }
-      .example-wrapper {
+      .html-boilerplate-example-wrapper {
         padding-left:2em;
         margin: 2em 0;
         border-left: 1px solid #ddd;
       }
+      .html-boilerplate-example-wrapper pre {
+        max-height: 300px;
+        max-width: 100%;
+        overflow: auto;
+      }
+      #styleguides {
+        width: 100%;
+      }
+      #custom-css {
+        display: none;
+      }
+      #custom-css-input {
+        width: 75%;
+      }
     </style>
   </head>
   <body>
-    <div class="sidenav">
+    <div class="html-boilerplate-sidenav">
       <h5><a href="#top">Return to top ⬆︎</a></h5>
       <form id="css-selector">
         <label for="styleguides">Style Guide</label><br>
@@ -45,8 +60,14 @@
           <option value="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">Bootstrap 4</option>
           <option value="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">Zurb Foundation</option>
           <option value="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.5/css/uikit.min.css">UIKit</option>
+          <option value="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">Materialize (Google Material)</option>
           <option value="">None (browser default styles)</option>
+          <option value="custom">Custom (url)</option>
         </select>
+        <div id="custom-css">
+          <input id="custom-css-input" type="url">
+          <input id="custom-css-submit" type="submit" value="load">
+        </div>
       </form>
               <h5><a href="#Content%20Sectioning">Content Sectioning</a></h5>
         <ul>
@@ -117,21 +138,21 @@
                   </ul>
           </div>
 
-    <div class="main-content">
+    <div class="html-boilerplate-main-content">
       <h1>HTML Elements Boilerplate</h1>
       <p>
         This page is meant to demonstrate styling of base-level HTML elements. It is a tool to help make brand-consistent styling at a very base level. The examples and descriptions on this page are pulled from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a>. The list excludes elements that don't require any inherent styles such as <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> as well as deprecated and very edge-case elements.
       </p>
               <a id="Content%20Sectioning"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Content Sectioning</h2>
           <p>Content sectioning elements allow you to organize the document content into logical pieces. Use the sectioning elements to create a broad outline for your page content, including header and footer navigation, and heading elements to identify sections of content.</p>
                       <a id="Headings%20-%20%3Ch1%3E%2C%20%3Ch2%3E%2C%20%3Ch3%3E%2C%20%3Ch4%3E%2C%20%3Ch5%3E%2C%20%3Ch6%3E"></a>
 <h3>Headings - &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;h1&gt;–&lt;h6&gt; elements represent six levels of section headings. &lt;h1&gt; is the highest section level and &lt;h6&gt; is the lowest.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;h1&gt;Heading level 1&lt;/h1&gt;
+    <pre>&lt;h1&gt;Heading level 1&lt;/h1&gt;
 &lt;h2&gt;Heading level 2&lt;/h2&gt;
 &lt;h3&gt;Heading level 3&lt;/h3&gt;
 &lt;h4&gt;Heading level 4&lt;/h4&gt;
@@ -150,10 +171,10 @@
   </div>
                       <a id="Heading%20Group%20-%20%3Chgroup%3E"></a>
 <h3>Heading Group - &lt;hgroup&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;hgroup&gt; element represents a multi-level heading for a section of a document. It groups a set of &lt;h1&gt;–&lt;h6&gt; elements.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;hgroup&gt;
+    <pre>&lt;hgroup&gt;
   &lt;h1&gt;Title&lt;/h1&gt;
   &lt;h4&gt;Subtitle&lt;/h4&gt;
 &lt;/hgroup&gt;</pre>
@@ -168,15 +189,15 @@
   </div>
                   </div>
               <a id="Text%20Content"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Text Content</h2>
           <p>Use HTML text content elements to organize blocks or sections of content placed between the opening &lt;body&gt; and closing &lt;/body&gt; tags. Important for accessibility and SEO, these elements identify the purpose or structure of that content.</p>
                       <a id="Blockquote%20-%20%3Cblockquote%3E"></a>
 <h3>Blockquote - &lt;blockquote&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;blockquote&gt; Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the &lt;cite&gt; element.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;blockquote cite=&#039;https://tools.ietf.org/html/rfc1149&#039;&gt;
+    <pre>&lt;blockquote cite=&#039;https://tools.ietf.org/html/rfc1149&#039;&gt;
   &lt;p&gt;
     Avian carriers can provide high delay, low throughput, and low altitude service. The connection topology is limited to a single point-to-point path for each carrier, used with standard carriers, but many carriers can be used without significant interference with each other, outside of early spring. This is because of the 3D ether space available to the carriers, in contrast to the 1D ether used by IEEE802.3. The carriers have an intrinsic collision avoidance system, which increases availability.
   &lt;/p&gt;
@@ -193,10 +214,10 @@
   </div>
                       <a id="Definition%20List%20-%20%3Cdl%3E%2C%20%3Cdd%3E%2C%20%3Cdt%3E"></a>
 <h3>Definition List - &lt;dl&gt;, &lt;dd&gt;, &lt;dt&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;dl&gt; element represents a description list. The element encloses a list of groups of terms (specified using the &lt;dt&gt; element) and descriptions (provided by &lt;dd&gt; elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;dl&gt;
+    <pre>&lt;dl&gt;
   &lt;dt&gt;Name&lt;/dt&gt;
   &lt;dd&gt;Godzilla&lt;/dd&gt;
   &lt;dt&gt;Born&lt;/dt&gt;
@@ -223,10 +244,10 @@
   </div>
                       <a id="Figure%20-%20%3Cfigure%3E%2C%20%3Cfigcaption%3E"></a>
 <h3>Figure - &lt;figure&gt;, &lt;figcaption&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;figure&gt; element represents self-contained content, frequently with a caption (&lt;figcaption&gt;), and is typically referenced as a single unit.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;figure&gt;
+    <pre>&lt;figure&gt;
   &lt;img
   src=&quot;https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png&quot;
   alt=&quot;An awesome picture&quot;&gt;
@@ -245,10 +266,10 @@
   </div>
                       <a id="Horizontal%20Rule%20-%20%3Chr%3E"></a>
 <h3>Horizontal Rule - &lt;hr&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;hr&gt; element represents a thematic break between paragraph-level elements (for example, a change of scene in a story, or a shift of topic with a section); historically, this has been presented as a horizontal rule or line.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;hr&gt;</pre>
+    <pre>&lt;hr&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <hr>
@@ -257,10 +278,10 @@
   </div>
                       <a id="Paragraph%20-%20%3Cp%3E"></a>
 <h3>Paragraph - &lt;p&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;p&gt; element represents a paragraph of text.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   This is the first paragraph of text. This is the first paragraph of text. This is the first paragraph of text. This is the first paragraph of text.
 &lt;/p&gt;
 &lt;p&gt;
@@ -279,10 +300,10 @@
   </div>
                       <a id="Preformatted%20Text%20-%20%3Cpre%3E"></a>
 <h3>Preformatted Text - &lt;pre&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;pre&gt; element represents preformatted text which is to be presented exactly as written in the HTML file.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;pre&gt;
+    <pre>&lt;pre&gt;
   body {
     color:red;
   }
@@ -299,11 +320,11 @@
   </div>
                       <a id="Unordered%20List%20-%20%3Cul%3E"></a>
 <h3>Unordered List - &lt;ul&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;ul&gt; element represents an unordered list of items, typically rendered as a bulleted list.</p>
             <h4 style="margin-top:1em;">Basic List</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;ul&gt;
+    <pre>&lt;ul&gt;
   &lt;li&gt;first item&lt;/li&gt;
   &lt;li&gt;second item&lt;/li&gt;
   &lt;li&gt;third item&lt;/li&gt;
@@ -319,7 +340,7 @@
     </div>
             <h4 style="margin-top:1em;">Nested List</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;ul&gt;
+    <pre>&lt;ul&gt;
   &lt;li&gt;first item&lt;/li&gt;
   &lt;li&gt;second item
   &lt;!-- Look, the closing &lt;/li&gt; tag is not placed here! --&gt;
@@ -368,11 +389,11 @@
   </div>
                       <a id="Ordered%20List%20-%20%3Col%3E"></a>
 <h3>Ordered List - &lt;ol&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;ol&gt; element represents an ordered list of items, typically rendered as a numbered list.</p>
             <h4 style="margin-top:1em;">Basic list</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;ol&gt;
+    <pre>&lt;ol&gt;
   &lt;li&gt;first item&lt;/li&gt;
   &lt;li&gt;second item&lt;/li&gt;
   &lt;li&gt;third item&lt;/li&gt;
@@ -388,7 +409,7 @@
     </div>
             <h4 style="margin-top:1em;">Nested List</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;ol&gt;
+    <pre>&lt;ol&gt;
   &lt;li&gt;first item&lt;/li&gt;
   &lt;li&gt;second item  &lt;!-- closing &lt;/li&gt; tag not here! --&gt;
     &lt;ol&gt;
@@ -417,15 +438,15 @@
   </div>
                   </div>
               <a id="Inline%20text%20semantics"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Inline text semantics</h2>
           <p>Use the HTML inline text semantic to define the meaning, structure, or style of a word, line, or any arbitrary piece of text.</p>
                       <a id="Hyperlink%20-%20%3Ca%3E"></a>
 <h3>Hyperlink - &lt;a&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;a&gt; element (or anchor element) creates a hyperlink to other web pages, files, locations within the same page, email addresses, or any other URL.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;a href=&quot;https://www.tableau.com&quot;&gt;Test link&lt;/a&gt;</pre>
+    <pre>&lt;a href=&quot;https://www.tableau.com&quot;&gt;Test link&lt;/a&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <a href="https://www.tableau.com">Test link</a>
@@ -434,10 +455,10 @@
   </div>
                       <a id="Bring%20Attention%20To%20-%20%3Cb%3E"></a>
 <h3>Bring Attention To - &lt;b&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Bring Attention To element (&lt;b&gt;)  is used to draw the reader&#039;s attention to the element&#039;s contents, which are not otherwise granted special importance.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   This article describes several &lt;b&gt;text-level&lt;/b&gt; elements. It explains their usage in an &lt;b&gt;HTML&lt;/b&gt; document.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -450,10 +471,10 @@
   </div>
                       <a id="Line%20Break%20-%20%3Cbr%3E"></a>
 <h3>Line Break - &lt;br&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;br&gt; element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">Mozilla Foundation&lt;br&gt;
+    <pre>Mozilla Foundation&lt;br&gt;
 1981 Landings Drive&lt;br&gt;
 Building K&lt;br&gt;
 Mountain View, CA 94043-0801&lt;br&gt;
@@ -470,10 +491,10 @@ USA
   </div>
                       <a id="Citation%20-%20%3Ccite%3E"></a>
 <h3>Citation - &lt;cite&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Citation element (&lt;cite&gt;) is used to describe a reference to a cited creative work, and must include either the title or the URL of that work.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;More information can be found in &lt;cite&gt;[ISO-0000]&lt;/cite&gt;.&lt;/p&gt;</pre>
+    <pre>&lt;p&gt;More information can be found in &lt;cite&gt;[ISO-0000]&lt;/cite&gt;.&lt;/p&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <p>More information can be found in <cite>[ISO-0000]</cite>.</p>
@@ -482,10 +503,10 @@ USA
   </div>
                       <a id="Code%20-%20%3Ccode%3E"></a>
 <h3>Code - &lt;code&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;code&gt; element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;The function &lt;code&gt;selectAll()&lt;/code&gt; highlights all the text in the input field so the user can, for example, copy or delete the text.&lt;/p&gt;</pre>
+    <pre>&lt;p&gt;The function &lt;code&gt;selectAll()&lt;/code&gt; highlights all the text in the input field so the user can, for example, copy or delete the text.&lt;/p&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <p>The function <code>selectAll()</code> highlights all the text in the input field so the user can, for example, copy or delete the text.</p>
@@ -494,10 +515,10 @@ USA
   </div>
                       <a id="Data%20-%20%3Cdata%3E"></a>
 <h3>Data - &lt;data&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;data&gt; element links a given content with a machine-readable translation. If the content is time- or date-related, the &lt;time&gt; element must be used.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;New Products&lt;/p&gt;
+    <pre>&lt;p&gt;New Products&lt;/p&gt;
 &lt;ul&gt;
  &lt;li&gt;&lt;data value=&quot;398&quot;&gt;Mini Ketchup&lt;/data&gt;&lt;/li&gt;
  &lt;li&gt;&lt;data value=&quot;399&quot;&gt;Jumbo Ketchup&lt;/data&gt;&lt;/li&gt;
@@ -516,10 +537,10 @@ USA
   </div>
                       <a id="Emphasis%20-%20%3Cem%3E"></a>
 <h3>Emphasis - &lt;em&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;em&gt; element marks text that has stress emphasis. The &lt;em&gt; element can be nested, with each level of nesting indicating a greater degree of emphasis.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   In HTML 5, what was previously called &lt;em&gt;block-level&lt;/em&gt; content is now called &lt;em&gt;flow&lt;/em&gt; content.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -532,10 +553,10 @@ USA
   </div>
                       <a id="Keyboard%20Input%20-%20%3Ckbd%3E"></a>
 <h3>Keyboard Input - &lt;kbd&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Keyboard Input element (&lt;kbd&gt;) represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;Use the command &lt;kbd&gt;help mycommand&lt;/kbd&gt; to view documentation for the command &quot;mycommand&quot;.&lt;/p&gt;</pre>
+    <pre>&lt;p&gt;Use the command &lt;kbd&gt;help mycommand&lt;/kbd&gt; to view documentation for the command &quot;mycommand&quot;.&lt;/p&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <p>Use the command <kbd>help mycommand</kbd> to view documentation for the command "mycommand".</p>
@@ -544,10 +565,10 @@ USA
   </div>
                       <a id="Mark%20-%20%3Cmark%3E"></a>
 <h3>Mark - &lt;mark&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Mark Text element (&lt;mark&gt;) represents text which is marked or highlighted for reference or notation purposes, due to the marked passage&#039;s relevance or importance in the enclosing context.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;blockquote&gt;
+    <pre>&lt;blockquote&gt;
   It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, &lt;mark&gt;Rebel spies managed to steal secret plans&lt;/mark&gt; to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
 &lt;/blockquote&gt;</pre>
     <h6>Example:</h6>
@@ -560,10 +581,10 @@ USA
   </div>
                       <a id="Inline%20Quotation%20-%20%3Cq%3E"></a>
 <h3>Inline Quotation - &lt;q&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;q&gt; element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   According to Mozilla&#039;s website, &lt;q cite=&quot;https://www.mozilla.org/en-US/about/history/details/&quot;&gt;Firefox 1.0 was released in 2004 and became a big success.&lt;/q&gt;
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -576,10 +597,10 @@ USA
   </div>
                       <a id="Strikethrough%20-%20%3Cs%3E"></a>
 <h3>Strikethrough - &lt;s&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;s&gt; element renders text with a strikethrough, or a line through it. Use the &lt;s&gt; element to represent things that are no longer relevant or no longer accurate. However, &lt;s&gt; is not appropriate when indicating document edits; for that, use the &lt;del&gt; and &lt;ins&gt; elements, as appropriate.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;s&gt;Today&#039;s Special: Salmon&lt;/s&gt; SOLD OUT</pre>
+    <pre>&lt;s&gt;Today&#039;s Special: Salmon&lt;/s&gt; SOLD OUT</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <s>Today's Special: Salmon</s> SOLD OUT
@@ -588,10 +609,10 @@ USA
   </div>
                       <a id="Small%20Text%20-%20%3Csmall%3E"></a>
 <h3>Small Text - &lt;small&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;small&gt; element makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser&#039;s minimum font size.  In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   This is the first sentence. &lt;small&gt;This whole sentence is in small letters.&lt;/small&gt;
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -604,10 +625,10 @@ USA
   </div>
                       <a id="Strong%20Importance%20-%20%3Cstrong%3E"></a>
 <h3>Strong Importance - &lt;strong&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Strong Importance Element (&lt;strong&gt;) indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   Before proceeding, &lt;strong&gt;make sure you put on your safety goggles&lt;/strong&gt;.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -620,10 +641,10 @@ USA
   </div>
                       <a id="Subscript%20-%20%3Csub%3E"></a>
 <h3>Subscript - &lt;sub&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Subscript element (&lt;sub&gt;) specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   According to the computations by Nakamura, Johnson, and Mason&lt;sub&gt;1&lt;/sub&gt; this will result in the complete annihilation of both particles.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -636,10 +657,10 @@ USA
   </div>
                       <a id="Superscript%20-%20%3Csup%3E"></a>
 <h3>Superscript - &lt;sup&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Superscript element (&lt;sup&gt;) specifies inline text which is to be displayed as superscript for solely typographical reasons.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   One of the most common equations in all of physics is E=mc&lt;sup&gt;2&lt;/sup&gt;.
 &lt;p&gt;</pre>
     <h6>Example:</h6>
@@ -652,10 +673,10 @@ USA
   </div>
                       <a id="Time%20-%20%3Ctime%3E"></a>
 <h3>Time - &lt;time&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;time&gt; element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   The concert starts at &lt;time&gt;20:00&lt;/time&gt;.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -668,10 +689,10 @@ USA
   </div>
                       <a id="Unarticulated%20Annotation%20-%20%3Cu%3E"></a>
 <h3>Unarticulated Annotation - &lt;u&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Unarticulated Annotation element (&lt;u&gt;) represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;
+    <pre>&lt;p&gt;
   This paragraph includes a &lt;u class=&quot;spelling&quot;&gt;wrnogly&lt;/u&gt; spelled word.
 &lt;/p&gt;</pre>
     <h6>Example:</h6>
@@ -684,15 +705,15 @@ USA
   </div>
                   </div>
               <a id="Image%20and%20multimedia"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Image and multimedia</h2>
           <p>HTML supports various multimedia resources such as images, audio, and video.</p>
                       <a id="Audio%20-%20%3Caudio%3E"></a>
 <h3>Audio - &lt;audio&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;area&gt; element defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a &lt;map&gt; element.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;audio controls
+    <pre>&lt;audio controls
   src=&quot;http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg&quot;
   autoplay&gt;
 &lt;/audio&gt;</pre>
@@ -707,10 +728,10 @@ USA
   </div>
                       <a id="Image%20-%20%3Cimg%3E"></a>
 <h3>Image - &lt;img&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;img&gt; element embeds an image into the document.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;img src=&quot;http://via.placeholder.com/350x150&quot; alt=&quot;Alternative Text&quot;&gt;</pre>
+    <pre>&lt;img src=&quot;http://via.placeholder.com/350x150&quot; alt=&quot;Alternative Text&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <img src="http://via.placeholder.com/350x150" alt="Alternative Text">
@@ -719,10 +740,10 @@ USA
   </div>
                       <a id="Video%20-%20%3Cvideo%3E"></a>
 <h3>Video - &lt;video&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Video element (&lt;video&gt;) embeds a media player which supports video playback into the document.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;video controls
+    <pre>&lt;video controls
   src=&quot;https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4&quot;
   poster=&quot;https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217&quot;
   width=&quot;620&quot;&gt;
@@ -739,16 +760,16 @@ USA
   </div>
                   </div>
               <a id="Table%20content"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Table content</h2>
           <p>The elements here are used to create and handle tabular data.</p>
                       <a id="Table%20-%20%3Ctable%3E"></a>
 <h3>Table - &lt;table&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;table&gt; element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.</p>
             <h4 style="margin-top:1em;">Simple table</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;tr&gt;
     &lt;td&gt;John&lt;/td&gt;
     &lt;td&gt;Doe&lt;/td&gt;
@@ -774,7 +795,7 @@ USA
     </div>
             <h4 style="margin-top:1em;">Table with colspan and rowspan</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;tr&gt;
     &lt;td&gt;This&lt;/td&gt;
     &lt;td&gt;Little&lt;/td&gt;
@@ -850,7 +871,7 @@ USA
     </div>
             <h4 style="margin-top:1em;">Complex table</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;caption&gt;A complex table&lt;/caption&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -972,7 +993,7 @@ USA
     </div>
             <h4 style="margin-top:1em;">Complex data table</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th rowspan=&quot;2&quot; colspan=&quot;1&quot;&gt;Name&lt;/th&gt;
@@ -1195,10 +1216,10 @@ USA
   </div>
                       <a id="Table%20Head%20-%20%3Cthead%3E"></a>
 <h3>Table Head - &lt;thead&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;thead&gt; element defines a set of rows defining the head of the columns of the table.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;First name&lt;/th&gt;
@@ -1237,10 +1258,10 @@ USA
   </div>
                       <a id="Table%20Head%20Cell%20-%20%3Cth%3E"></a>
 <h3>Table Head Cell - &lt;th&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;th&gt; element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;First name&lt;/th&gt;
     &lt;th&gt;Last name&lt;/th&gt;
@@ -1275,10 +1296,10 @@ USA
   </div>
                       <a id="Table%20Body%20-%20%3Ctbody%3E"></a>
 <h3>Table Body - &lt;tbody&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Table Body element (&lt;tbody&gt;) encapsulates a set of table row (&lt;tr&gt; elements, indicating that they comprise the body of the table (&lt;table&gt;).</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;John&lt;/td&gt;
@@ -1309,10 +1330,10 @@ USA
   </div>
                       <a id="Table%20Footer%20-%20%3Ctfoot%3E"></a>
 <h3>Table Footer - &lt;tfoot&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;tfoot&gt; element defines a set of rows summarizing the columns of the table.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;tr&gt;
     &lt;td&gt;John&lt;/td&gt;
     &lt;td&gt;Doe&lt;/td&gt;
@@ -1351,10 +1372,10 @@ USA
   </div>
                       <a id="Table%20Caption%20-%20%3Ccaption%3E"></a>
 <h3>Table Caption - &lt;caption&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Table Caption element (&lt;caption&gt;) specifies the caption (or title) of a table, and if used is always the first child of a &lt;table&gt;.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;caption&gt;Awesome caption&lt;/caption&gt;
   &lt;tr&gt;
     &lt;td&gt;Awesome data&lt;/td&gt;
@@ -1373,10 +1394,10 @@ USA
   </div>
                       <a id="Column%20Group%20-%20%3Ccolgroup%3E"></a>
 <h3>Column Group - &lt;colgroup&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;colgroup&gt; element defines a group of columns within a table.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;colgroup span=&quot;4&quot;&gt;&lt;/colgroup&gt;
   &lt;tr&gt;
     &lt;th&gt;Countries&lt;/th&gt;
@@ -1425,10 +1446,10 @@ USA
   </div>
                       <a id="Table%20Column%20-%20%3Ccol%3E"></a>
 <h3>Table Column - &lt;col&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;col&gt; element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a &lt;colgroup&gt; element.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;table&gt;
+    <pre>&lt;table&gt;
   &lt;colgroup&gt;
     &lt;col style=&quot;background-color: #0f0&quot;&gt;
     &lt;col span=&quot;2&quot;&gt;
@@ -1467,16 +1488,16 @@ USA
   </div>
                   </div>
               <a id="Forms"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>Forms</h2>
           <p>HTML provides a number of elements which can be used together to create forms which the user can fill out and submit to the Web site or application. There&#039;s a great deal of further information about this available in the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms&quot; target=&quot;_blank&quot;&gt;HTML forms guide.&lt;/a&gt;</p>
                       <a id="%3Cform%3E"></a>
 <h3>&lt;form&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;form&gt; element represents a document section that contains interactive controls for submitting information to a web server.</p>
             <h4 style="margin-top:1em;">Simple form</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
+    <pre>&lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
   &lt;label for=&quot;GET-name&quot;&gt;Name:&lt;/label&gt;
   &lt;input id=&quot;GET-name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;
   &lt;input type=&quot;submit&quot; value=&quot;Save&quot;&gt;
@@ -1493,10 +1514,10 @@ USA
   </div>
                       <a id="%3Cbutton%3E"></a>
 <h3>&lt;button&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;button&gt; element represents a clickable button, which can be used in forms, or anywhere in a document that needs simple, standard button functionality.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;button name=&quot;button&quot;&gt;Click me&lt;/button&gt;</pre>
+    <pre>&lt;button name=&quot;button&quot;&gt;Click me&lt;/button&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <button name="button">Click me</button>
@@ -1505,10 +1526,10 @@ USA
   </div>
                       <a id="%3Cfieldset%3E"></a>
 <h3>&lt;fieldset&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;fieldset&gt; element is used to group several controls as well as labels (&lt;label&gt;) within a web form.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;form action=&quot;test.php&quot; method=&quot;post&quot;&gt;
+    <pre>&lt;form action=&quot;test.php&quot; method=&quot;post&quot;&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Title&lt;/legend&gt;
     &lt;input type=&quot;radio&quot; id=&quot;radio1&quot;&gt;
@@ -1529,12 +1550,12 @@ USA
   </div>
                       <a id="%3Cinput%3E"></a>
 <h3>&lt;input&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;input&gt; element is used to create interactive controls for web-based forms in order to accept data from the user.</p>
             <h4 style="margin-top:1em;">Button input</h4>
               <p>A push button with no default behavior.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;button&quot; value=&quot;Input Button&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;button&quot; value=&quot;Input Button&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="button" value="Input Button">
@@ -1543,7 +1564,7 @@ USA
             <h4 style="margin-top:1em;">Checkbox input</h4>
               <p>A check box allowing single values to be selected/deselected.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;checkbox&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;checkbox&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="checkbox">
@@ -1552,7 +1573,7 @@ USA
             <h4 style="margin-top:1em;">Color input</h4>
               <p>A control for specifying a color. A color picker's UI has no required features other than accepting simple colors as text (more info).</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;color&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;color&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="color">
@@ -1561,7 +1582,7 @@ USA
             <h4 style="margin-top:1em;">Date input</h4>
               <p>A control for entering a date (year, month, and day, with no time).</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;date&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;date&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="date">
@@ -1570,7 +1591,7 @@ USA
             <h4 style="margin-top:1em;">Datetime-local input</h4>
               <p>A control for entering a date and time, with no time zone.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;datetime-local&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;datetime-local&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="datetime-local">
@@ -1579,7 +1600,7 @@ USA
             <h4 style="margin-top:1em;">Time input</h4>
               <p>A control for entering a time value with no time zone.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;time&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;time&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="time">
@@ -1588,7 +1609,7 @@ USA
             <h4 style="margin-top:1em;">Week input</h4>
               <p>A control for entering a date consisting of a week-year number and a week number with no time zone.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;week&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;week&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="week">
@@ -1597,7 +1618,7 @@ USA
             <h4 style="margin-top:1em;">Month input</h4>
               <p>A control for entering a month and year, with no time zone.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;month&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;month&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="month">
@@ -1606,7 +1627,7 @@ USA
             <h4 style="margin-top:1em;">File input</h4>
               <p>A control that lets the user select a file. Use the accept attribute to define the types of files that the control can select.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;file&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;file&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="file">
@@ -1615,7 +1636,7 @@ USA
             <h4 style="margin-top:1em;">Email input</h4>
               <p>A field for editing an e-mail address.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;email&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;email&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="email">
@@ -1624,7 +1645,7 @@ USA
             <h4 style="margin-top:1em;">Hidden input</h4>
               <p>A control that is not displayed but whose value is submitted to the server.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;hidden&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;hidden&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="hidden">
@@ -1633,7 +1654,7 @@ USA
             <h4 style="margin-top:1em;">Number input</h4>
               <p>A control for entering a number.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;number&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;number&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="number">
@@ -1642,7 +1663,7 @@ USA
             <h4 style="margin-top:1em;">Password input</h4>
               <p>A single-line text field whose value is obscured. Use the maxlength and minlength attributes to specify the maximum length of the value that can be entered.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;password&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;password&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="password">
@@ -1651,7 +1672,7 @@ USA
             <h4 style="margin-top:1em;">Radio input</h4>
               <p>A radio button, allowing a single value to be selected out of multiple choices.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;radio&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;radio&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="radio">
@@ -1660,7 +1681,7 @@ USA
             <h4 style="margin-top:1em;">Range input</h4>
               <p>A control for entering a number whose exact value is not important.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;range&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;range&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="range">
@@ -1669,7 +1690,7 @@ USA
             <h4 style="margin-top:1em;">Reset input</h4>
               <p>A button that resets the contents of the form to default values.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;reset&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;reset&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="reset">
@@ -1678,7 +1699,7 @@ USA
             <h4 style="margin-top:1em;">Search input</h4>
               <p>A single-line text field for entering search strings. Line-breaks are automatically removed from the input value.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;search&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;search&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="search">
@@ -1687,7 +1708,7 @@ USA
             <h4 style="margin-top:1em;">Submit input</h4>
               <p>A button that submits the form.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;submit&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;submit&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="submit">
@@ -1696,7 +1717,7 @@ USA
             <h4 style="margin-top:1em;">Tel input</h4>
               <p>A control for entering a telephone number.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;tel&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;tel&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="tel">
@@ -1705,7 +1726,7 @@ USA
             <h4 style="margin-top:1em;">Text input</h4>
               <p>A single-line text field. Line-breaks are automatically removed from the input value.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;text&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;text&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="text">
@@ -1714,7 +1735,7 @@ USA
             <h4 style="margin-top:1em;">Url input</h4>
               <p>A field for entering a URL.</p>
         <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;input type=&quot;url&quot;&gt;</pre>
+    <pre>&lt;input type=&quot;url&quot;&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <input type="url">
@@ -1723,10 +1744,10 @@ USA
   </div>
                       <a id="%3Clabel%3E"></a>
 <h3>&lt;label&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;label&gt; element represents a caption for an item in a user interface.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;label&gt;Click me &lt;input type=&quot;text&quot;&gt;&lt;/label&gt;</pre>
+    <pre>&lt;label&gt;Click me &lt;input type=&quot;text&quot;&gt;&lt;/label&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <label>Click me <input type="text"></label>
@@ -1735,10 +1756,10 @@ USA
   </div>
                       <a id="%3Clegend%3E"></a>
 <h3>&lt;legend&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;legend&gt; element represents a caption for the content of its parent &lt;fieldset&gt;.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+    <pre>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Title&lt;/legend&gt;
     &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio2&quot;&gt;
@@ -1759,11 +1780,11 @@ USA
   </div>
                       <a id="%3Cmeter%3E"></a>
 <h3>&lt;meter&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;meter&gt; element represents either a scalar value within a known range or a fractional value.</p>
             <h4 style="margin-top:1em;">Simple example</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;Heat the oven to &lt;meter min=&quot;200&quot; max=&quot;500&quot; value=&quot;350&quot;&gt;350 degrees&lt;/meter&gt;.&lt;/p&gt;</pre>
+    <pre>&lt;p&gt;Heat the oven to &lt;meter min=&quot;200&quot; max=&quot;500&quot; value=&quot;350&quot;&gt;350 degrees&lt;/meter&gt;.&lt;/p&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <p>Heat the oven to <meter min="200" max="500" value="350">350 degrees</meter>.</p>
@@ -1771,7 +1792,7 @@ USA
     </div>
             <h4 style="margin-top:1em;">High and Low range example</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;p&gt;He got a &lt;meter low=&quot;69&quot; high=&quot;80&quot; max=&quot;100&quot; value=&quot;84&quot;&gt;B&lt;/meter&gt; on the exam.&lt;/p&gt;</pre>
+    <pre>&lt;p&gt;He got a &lt;meter low=&quot;69&quot; high=&quot;80&quot; max=&quot;100&quot; value=&quot;84&quot;&gt;B&lt;/meter&gt; on the exam.&lt;/p&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <p>He got a <meter low="69" high="80" max="100" value="84">B</meter> on the exam.</p>
@@ -1780,10 +1801,10 @@ USA
   </div>
                       <a id="%3Coutput%3E"></a>
 <h3>&lt;output&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML Output element (&lt;output&gt;) is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;form oninput=&quot;result.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;
+    <pre>&lt;form oninput=&quot;result.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;
   &lt;input type=&quot;range&quot; name=&quot;b&quot; value=&quot;50&quot; /&gt; +
   &lt;input type=&quot;number&quot; name=&quot;a&quot; value=&quot;10&quot; /&gt; =
   &lt;output name=&quot;result&quot;&gt;60&lt;/output&gt;
@@ -1800,10 +1821,10 @@ USA
   </div>
                       <a id="%3Cprogress%3E"></a>
 <h3>&lt;progress&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;progress&gt; element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;</pre>
+    <pre>&lt;progress value=&quot;70&quot; max=&quot;100&quot;&gt;70 %&lt;/progress&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <progress value="70" max="100">70 %</progress>
@@ -1812,11 +1833,11 @@ USA
   </div>
                       <a id="%3Cselect%3E"></a>
 <h3>&lt;select&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;select&gt; element represents a control that provides a menu of options</p>
             <h4 style="margin-top:1em;">Simple select list</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;select name=&quot;text&quot;&gt;
+    <pre>&lt;select name=&quot;text&quot;&gt;
   &lt;option value=&quot;value1&quot;&gt;Value 1&lt;/option&gt;
   &lt;option value=&quot;value2&quot; selected&gt;Value 2&lt;/option&gt;
   &lt;option value=&quot;value3&quot;&gt;Value 3&lt;/option&gt;
@@ -1832,7 +1853,7 @@ USA
     </div>
             <h4 style="margin-top:1em;">With option groups</h4>
             <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;select&gt;
+    <pre>&lt;select&gt;
   &lt;optgroup label=&quot;Group 1&quot;&gt;
     &lt;option&gt;Option 1.1&lt;/option&gt;
   &lt;/optgroup&gt;
@@ -1867,10 +1888,10 @@ USA
   </div>
                       <a id="%3Ctextarea%3E"></a>
 <h3>&lt;textarea&gt;</h3>
-<div class="example-wrapper">
+<div class="html-boilerplate-example-wrapper">
   <p>The HTML &lt;textarea&gt; element represents a multi-line plain-text editing control.</p>
               <h6>Markup:</h6>
-    <pre style="max-height: 300px">&lt;textarea name=&quot;textarea&quot; rows=&quot;10&quot; cols=&quot;50&quot;&gt;Write something here&lt;/textarea&gt;</pre>
+    <pre>&lt;textarea name=&quot;textarea&quot; rows=&quot;10&quot; cols=&quot;50&quot;&gt;Write something here&lt;/textarea&gt;</pre>
     <h6>Example:</h6>
     <div style="border: 1px dashed #f00">
       <textarea name="textarea" rows="10" cols="50">Write something here</textarea>
@@ -1882,8 +1903,24 @@ USA
 
     <!-- Handle swapping stylesheets -->
     <script>
-      document.getElementById('styleguides').addEventListener('change', function() {
-        document.getElementById('styles-link').href = this.value;
+      var styleguides = document.getElementById('styleguides'),
+          stylesLink = document.getElementById('styles-link'),
+          customCssWrapper = document.getElementById('custom-css'),
+          customCssInput = document.getElementById('custom-css-input'),
+          customCssSubmit = document.getElementById('custom-css-submit');
+
+      styleguides.addEventListener('change', function() {
+        if (this.value === 'custom') {
+          customCssWrapper.style.display = 'inherit';
+        } else {
+          customCssWrapper.style.display = 'none';
+          stylesLink.href = this.value;
+        }
+      });
+
+      customCssSubmit.addEventListener('click', function(event) {
+        stylesLink.href = customCssInput.value;
+        event.preventDefault();
       });
     </script>
   </body>

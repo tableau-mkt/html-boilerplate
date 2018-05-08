@@ -7,7 +7,7 @@
     <link id="styles-link" rel="stylesheet" href="https://tableau-mkt.github.io/components/build/css/style.min.css" media="all" />
     <!-- A few custom styles for layout -->
     <style>
-      .sidenav {
+      .html-boilerplate-sidenav {
         position: fixed;
         box-sizing: border-box;
         top: 0;
@@ -16,26 +16,41 @@
         overflow: auto;
         padding: 0 1em;
         border-right: 1px solid #ddd;
+        background: #fff;
       }
-      .main-content {
+      .html-boilerplate-main-content {
         margin-left: 20%;
         padding: 0 2em 0 4em;
         max-width: 1200px;
         box-sizing: border-box;
       }
-      .section-wrapper {
+      .html-boilerplate-section-wrapper {
         margin-top: 2em;
         border-top: 1px solid #ddd;
       }
-      .example-wrapper {
+      .html-boilerplate-example-wrapper {
         padding-left:2em;
         margin: 2em 0;
         border-left: 1px solid #ddd;
       }
+      .html-boilerplate-example-wrapper pre {
+        max-height: 300px;
+        max-width: 100%;
+        overflow: auto;
+      }
+      #styleguides {
+        width: 100%;
+      }
+      #custom-css {
+        display: none;
+      }
+      #custom-css-input {
+        width: 75%;
+      }
     </style>
   </head>
   <body>
-    <div class="sidenav">
+    <div class="html-boilerplate-sidenav">
       <h5><a href="#top">Return to top ⬆︎</a></h5>
       <form id="css-selector">
         <label for="styleguides">Style Guide</label><br>
@@ -47,8 +62,14 @@
           <option value="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">Bootstrap 4</option>
           <option value="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">Zurb Foundation</option>
           <option value="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.5/css/uikit.min.css">UIKit</option>
+          <option value="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">Materialize (Google Material)</option>
           <option value="">None (browser default styles)</option>
+          <option value="custom">Custom (url)</option>
         </select>
+        <div id="custom-css">
+          <input id="custom-css-input" type="url">
+          <input id="custom-css-submit" type="submit" value="load">
+        </div>
       </form>
       {% for section in sections %}
         <h5><a href="#{{ section.title|url_encode }}">{{ section.title|e }}</a></h5>
@@ -60,14 +81,14 @@
       {% endfor %}
     </div>
 
-    <div class="main-content">
+    <div class="html-boilerplate-main-content">
       <h1>HTML Elements Boilerplate</h1>
       <p>
         This page is meant to demonstrate styling of base-level HTML elements. It is a tool to help make brand-consistent styling at a very base level. The examples and descriptions on this page are pulled from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a>. The list excludes elements that don't require any inherent styles such as <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> as well as deprecated and very edge-case elements.
       </p>
       {% for section in sections %}
         <a id="{{ section.title|url_encode }}"></a>
-        <div class="section-wrapper">
+        <div class="html-boilerplate-section-wrapper">
           <h2>{{ section.title|e }}</h2>
           <p>{{ section.description|e }}</p>
           {% for example in section.examples %}
@@ -79,8 +100,24 @@
 
     <!-- Handle swapping stylesheets -->
     <script>
-      document.getElementById('styleguides').addEventListener('change', function() {
-        document.getElementById('styles-link').href = this.value;
+      var styleguides = document.getElementById('styleguides'),
+          stylesLink = document.getElementById('styles-link'),
+          customCssWrapper = document.getElementById('custom-css'),
+          customCssInput = document.getElementById('custom-css-input'),
+          customCssSubmit = document.getElementById('custom-css-submit');
+
+      styleguides.addEventListener('change', function() {
+        if (this.value === 'custom') {
+          customCssWrapper.style.display = 'inherit';
+        } else {
+          customCssWrapper.style.display = 'none';
+          stylesLink.href = this.value;
+        }
+      });
+
+      customCssSubmit.addEventListener('click', function(event) {
+        stylesLink.href = customCssInput.value;
+        event.preventDefault();
       });
     </script>
   </body>
