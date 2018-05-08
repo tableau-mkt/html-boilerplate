@@ -8,18 +8,20 @@
     <!-- A few custom styles for layout -->
     <style>
       .sidenav {
-        position:fixed;
+        position: fixed;
+        box-sizing: border-box;
         top: 0;
-        width: 15%;
+        width: 20%;
         height: 100vh;
         overflow: auto;
         padding: 0 1em;
         border-right: 1px solid #ddd;
       }
       .main-content {
-        margin-left: 15%;
+        margin-left: 20%;
         padding: 0 2em 0 4em;
         max-width: 1200px;
+        box-sizing: border-box;
       }
       .section-wrapper {
         margin-top: 2em;
@@ -35,6 +37,19 @@
   <body>
     <div class="sidenav">
       <h5><a href="#top">Return to top ⬆︎</a></h5>
+      <form id="css-selector">
+        <label for="styleguides">Style Guide</label><br>
+        <select id="styleguides">
+          <!-- {% for styleguide in data.styleguides %}
+            <option selected value="{{ styleguide.url }}">{{ styleguide.name }}</option>
+          {% endfor %} -->
+          <option selected value="https://tableau-mkt.github.io/components/build/css/style.min.css">Tableau Web Style Guide</option>
+          <option value="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">Bootstrap 4</option>
+          <option value="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">Zurb Foundation</option>
+          <option value="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.5/css/uikit.min.css">UIKit</option>
+          <option value="">None (browser default styles)</option>
+        </select>
+      </form>
       {% for section in sections %}
         <h5><a href="#{{ section.title|url_encode }}">{{ section.title|e }}</a></h5>
         <ul>
@@ -50,18 +65,6 @@
       <p>
         This page is meant to demonstrate styling of base-level HTML elements. It is a tool to help make brand-consistent styling at a very base level. The examples and descriptions on this page are pulled from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a>. The list excludes elements that don't require any inherent styles such as <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> as well as deprecated and very edge-case elements.
       </p>
-      <form id="css-selector">
-        <label for="styleguides">Select a style guide</label>
-        <select id="styleguides">
-          <!-- {% for styleguide in data.styleguides %}
-            <option selected value="{{ styleguide.url }}">{{ styleguide.name }}</option>
-          {% endfor %} -->
-          <option selected value="https://tableau-mkt.github.io/components/build/css/style.min.css">Tableau Web Style Guide</option>
-          <option value="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">Bootstrap 4</option>
-          <option value="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">Zurb Foundation</option>
-          <option value="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.5/css/uikit.min.css">UIKit</option>
-        </select>
-      </form>
       {% for section in sections %}
         <a id="{{ section.title|url_encode }}"></a>
         <div class="section-wrapper">
