@@ -1,0 +1,19 @@
+<a id="{{ title|url_encode }}"></a>
+<h3>{{ title|e }}</h3>
+<div class="example-wrapper">
+  <p>{{ description|e }}</p>
+  {% for example in examples %}
+    {% if example.label %}
+      <h4 style="margin-top:1em;">{{ example.label }}</h4>
+    {% endif %}
+    {% if example.description %}
+      <p>{{ example.description }}</p>
+    {% endif %}
+    <h6>Markup:</h6>
+    <pre style="max-height: 300px">{{ example.markup|trim|e }}</pre>
+    <h6>Example:</h6>
+    <div style="border: 1px dashed #f00">
+      {{ example.markup }}
+    </div>
+  {% endfor %}
+</div>

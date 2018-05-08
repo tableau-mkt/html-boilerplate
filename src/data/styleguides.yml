@@ -1,0 +1,9 @@
+styleguides:
+  - name: Tableau Web Style Guide
+    url: https://tableau-mkt.github.io/components/build/css/style.min.css
+  - name: Bootstrap 4
+    url: https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css
+  - name: Zurb Foundation
+    url: https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css
+  - name: UIKit
+    url: https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.5/css/uikit.min.css
