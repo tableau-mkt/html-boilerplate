@@ -280,10 +280,7 @@ sections:
     description: The HTML <area> element defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a <map> element.
     examples:
       - markup: |
-          <audio controls
-            src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg"
-            autoplay>
-          </audio>
+          <audio controls src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg"></audio>
   - title: Image - <img>
     description: The HTML <img> element embeds an image into the document.
     examples:
