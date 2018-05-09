@@ -14,9 +14,24 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch(['./src/data/**/*.json', './src/data/**/*.yml', './src/templates/**/*.twig'], ['compile']);
+gulp.task('copy', function () {
+    gulp.src('./src/css/styles.css')
+        .pipe(gulp.dest('./build/css/'));
+    gulp.src('./src/js/scripts.js')
+        .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('default', ['compile', 'watch']);
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch([
+    './src/data/**/*.json',
+    './src/data/**/*.yml',
+    './src/templates/**/*.twig'
+  ], ['compile']);
+  gulp.watch([
+    './src/css/**/*.css',
+    './src/js/**/*.js',
+  ], ['copy']);
+});
+
+gulp.task('default', ['compile', 'copy', 'watch']);

@@ -4,52 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML Examples Boilerplate</title>
+    <link rel="stylesheet" href="css/styles.css" media="all" />
     <link id="styles-link" rel="stylesheet" href="https://tableau-mkt.github.io/components/build/css/style.min.css" media="all" />
-    <!-- A few custom styles for layout -->
-    <style>
-      .html-boilerplate-sidenav {
-        position: fixed;
-        box-sizing: border-box;
-        top: 0;
-        width: 20%;
-        height: 100vh;
-        overflow: auto;
-        padding: 0 1em;
-        border-right: 1px solid #ddd;
-        background: #fff;
-      }
-      .html-boilerplate-main-content {
-        margin-left: 20%;
-        padding: 0 2em 0 4em;
-        max-width: 1200px;
-        box-sizing: border-box;
-      }
-      .html-boilerplate-section-wrapper {
-        margin-top: 2em;
-        border-top: 1px solid #ddd;
-      }
-      .html-boilerplate-example-wrapper {
-        padding-left:2em;
-        margin: 2em 0;
-        border-left: 1px solid #ddd;
-      }
-      .html-boilerplate-example-wrapper pre {
-        max-height: 300px;
-        max-width: 100%;
-        overflow: auto;
-      }
-      #styleguides {
-        width: 100%;
-      }
-      #custom-css {
-        display: none;
-      }
-      #custom-css-input {
-        width: 75%;
-      }
-    </style>
   </head>
   <body>
+    <label class="html-boilerplate-mobile-toggle" for="mobile-nav-toggle">&#9776;</label>
+    <input type="checkbox" id="mobile-nav-toggle">
     <div class="html-boilerplate-sidenav">
       <h5><a href="#top">Return to top ⬆︎</a></h5>
       <form id="css-selector">
@@ -94,6 +54,9 @@
       <p>
         The examples and descriptions on this page are pulled from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a>. The list excludes elements that don't require any inherent styles such as <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> as well as deprecated and very edge-case elements.
       </p>
+      <p>
+        The source for this tool can be found on Github <a href="https://github.com/tableau-mkt/html-boilerplate" target="_blank">here</a>.
+      </p>
       {% for section in sections %}
         <a id="{{ section.title|url_encode }}"></a>
         <div class="html-boilerplate-section-wrapper">
@@ -106,27 +69,6 @@
       {% endfor %}
     </div>
 
-    <!-- Handle swapping stylesheets -->
-    <script>
-      var styleguides = document.getElementById('styleguides'),
-          stylesLink = document.getElementById('styles-link'),
-          customCssWrapper = document.getElementById('custom-css'),
-          customCssInput = document.getElementById('custom-css-input'),
-          customCssSubmit = document.getElementById('custom-css-submit');
-
-      styleguides.addEventListener('change', function() {
-        if (this.value === 'custom') {
-          customCssWrapper.style.display = 'inherit';
-        } else {
-          customCssWrapper.style.display = 'none';
-          stylesLink.href = this.value;
-        }
-      });
-
-      customCssSubmit.addEventListener('click', function(event) {
-        stylesLink.href = customCssInput.value;
-        event.preventDefault();
-      });
-    </script>
+    <script type="application/javascript" src="js/scripts.js"></script>
   </body>
 </html>

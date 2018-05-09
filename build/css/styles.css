@@ -1,0 +1,104 @@
+/**
+ *  Minimal styles for handling layout. 'html-boilerplate' prefix is used on
+ *  classes to avoid any collisions with various style guide CSS.
+ */
+
+.html-boilerplate-sidenav {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  overflow: auto;
+  padding: 0 1em;
+  border-right: 1px solid #ddd;
+  background: #fff;
+}
+
+.html-boilerplate-main-content {
+  margin-left: 20%;
+  padding: 0 2em 0 4em;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.html-boilerplate-section-wrapper {
+  margin-top: 2em;
+  border-top: 1px solid #ddd;
+}
+
+.html-boilerplate-example-wrapper {
+  padding-left:2em;
+  margin: 2em 0;
+  border-left: 1px solid #ddd;
+}
+
+.html-boilerplate-example-wrapper pre {
+  max-height: 300px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.html-boilerplate-preview-wrapper {
+  border: 1px dashed #f00;
+  overflow: auto;
+}
+
+#mobile-nav-toggle,
+.html-boilerplate-mobile-toggle {
+  display: none;
+}
+
+/* Mobile/Tabet Styles */
+@media (max-width: 960px) {
+  .html-boilerplate-sidenav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  .html-boilerplate-main-content {
+    margin-left: 0;
+    padding: 0 1em;
+  }
+
+  .html-boilerplate-example-wrapper {
+    padding-left: 1em;
+  }
+
+  .html-boilerplate-mobile-toggle {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    z-index: 2;
+    line-height: 1;
+    font-size: 2.5em;
+    text-align: center;
+    background: #eee;
+    color: #999;
+  }
+
+  #mobile-nav-toggle:checked + .html-boilerplate-sidenav {
+    display: inherit;
+  }
+}
+
+/* Styles for styelguide selector form */
+#styleguides {
+  width: 100%;
+}
+
+#custom-css {
+  display: none;
+}
+
+#custom-css-input {
+  width: 75%;
+}
